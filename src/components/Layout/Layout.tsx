@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface LayoutProps {
   toggleDarkMode: () => void;
@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       </header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with{" "}
+        © {new Date().getFullYear()}, Built with{' '}
         <a href="https://nextjs.org/">Next.js</a> &#128293;
       </footer>
     </div>

@@ -1,23 +1,19 @@
-import fs from "fs";
-import matter from "gray-matter";
-import Link from "next/link";
-import React from "react";
-import styled from "styled-components";
-
-const Button = styled.button`
-  background: ${(props) => props.theme.bg};
-  color: ${(props) => props.theme.fontColor};
-`;
+import Button from '@components/Button';
+import fs from 'fs';
+import matter from 'gray-matter';
+import Link from 'next/link';
+import React from 'react';
 
 export default function Home({ posts }) {
   return (
     <>
+      <h1>Custom Fonts are really nice</h1>
       {posts.map(({ frontmatter: { title, description, date }, slug }) => (
         <article key={slug}>
           <Button>Hello</Button>
           <header>
             <h3>
-              <Link href={"/post/[slug]"} as={`/post/${slug}`}>
+              <Link href={'/post/[slug]'} as={`/post/${slug}`}>
                 <a>{title}</a>
               </Link>
             </h3>
@@ -43,8 +39,8 @@ export async function getStaticProps() {
     const { data } = matter(markdownWithMetadata);
 
     // Convert post date to format: Month day, Year
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedDate = data.date.toLocaleDateString("en-US", options);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = data.date.toLocaleDateString('en-US', options);
 
     const frontmatter = {
       ...data,
@@ -52,7 +48,7 @@ export async function getStaticProps() {
     };
 
     return {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
       frontmatter,
     };
   });
