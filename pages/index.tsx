@@ -1,6 +1,8 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
+import React from "react";
+
 import Layout from "../src/components/layout";
 
 export default function Home({ posts }) {

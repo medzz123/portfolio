@@ -1,9 +1,10 @@
-import React from "react";
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
+import React from "react";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 import Layout from "../../src/components/layout";
 
 const CodeBlock = ({ language, value }) => {
