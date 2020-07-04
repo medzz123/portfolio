@@ -4,7 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import Layout from "../../components/layout";
+import Layout from "../../src/components/layout";
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -29,14 +29,14 @@ const Image = ({ alt, src }) => {
     <div className="relative">
       <img
         className="absolute top-0 left-0 z-10 w-full transition-opacity duration-500 ease-in opacity-100"
-        src={require(`../../content/assets/${src}?lqip`)}
+        src={require(`../../src/content/assets/${src}?lqip`)}
         alt={alt}
         style={styles.lqip}
       />
 
       <img
         className="w-full"
-        src={require(`../../content/assets/${src}`)}
+        src={require(`../../src/content/assets/${src}`)}
         alt={alt}
         onLoad={() => setImageLoaded(true)}
       />
@@ -63,7 +63,7 @@ export default function Post({ content, frontmatter }) {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("content/posts");
+  const files = fs.readdirSync("src/content/posts");
 
   const paths = files.map((filename) => ({
     params: {
@@ -79,7 +79,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMetadata = fs
-    .readFileSync(path.join("content/posts", slug + ".md"))
+    .readFileSync(path.join("src/content/posts", slug + ".md"))
     .toString();
 
   const { data, content } = matter(markdownWithMetadata);

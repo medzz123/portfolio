@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Layout from "../components/layout";
 import Link from "next/link";
+import Layout from "../src/components/layout";
 
 export default function Home({ posts }) {
   return (
@@ -28,11 +28,11 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/posts`);
+  const files = fs.readdirSync(`${process.cwd()}/src/content/posts`);
 
   const posts = files.map((filename) => {
     const markdownWithMetadata = fs
-      .readFileSync(`content/posts/${filename}`)
+      .readFileSync(`src/content/posts/${filename}`)
       .toString();
 
     const { data } = matter(markdownWithMetadata);
