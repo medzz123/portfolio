@@ -2,14 +2,19 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import React from "react";
+import styled from "styled-components";
 
-import Layout from "../src/components/layout";
+const Button = styled.button`
+  background: ${(props) => props.theme.bg};
+  color: ${(props) => props.theme.fontColor};
+`;
 
 export default function Home({ posts }) {
   return (
-    <Layout>
+    <>
       {posts.map(({ frontmatter: { title, description, date }, slug }) => (
         <article key={slug}>
+          <Button>Hello</Button>
           <header>
             <h3>
               <Link href={"/post/[slug]"} as={`/post/${slug}`}>
@@ -23,7 +28,7 @@ export default function Home({ posts }) {
           </section>
         </article>
       ))}
-    </Layout>
+    </>
   );
 }
 

@@ -5,8 +5,6 @@ import React from "react";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
-import Layout from "../../src/components/layout";
-
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
 };
@@ -45,19 +43,17 @@ const Image = ({ alt, src }) => {
 
 export default function Post({ content, frontmatter }) {
   return (
-    <Layout>
-      <article>
-        <header>
-          <h1>{frontmatter.title}</h1>
-          <p>{frontmatter.date}</p>
-        </header>
-        <ReactMarkdown
-          escapeHtml={false}
-          source={content}
-          renderers={{ code: CodeBlock, image: Image }}
-        />
-      </article>
-    </Layout>
+    <article>
+      <header>
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.date}</p>
+      </header>
+      <ReactMarkdown
+        escapeHtml={false}
+        source={content}
+        renderers={{ code: CodeBlock, image: Image }}
+      />
+    </article>
   );
 }
 
