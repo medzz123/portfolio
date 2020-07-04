@@ -1,9 +1,8 @@
+import Layout from "@components/Layout";
+import { darkTheme, lightTheme } from "@theme/theme";
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import useDarkMode from "use-dark-mode";
-
-import Layout from "../src/components/Layout";
-import { darkTheme, lightTheme } from "../src/theme";
 
 const MyApp = ({ Component, pageProps }) => {
   const [isMounted, setIsMounted] = useState(false);
