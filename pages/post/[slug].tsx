@@ -26,16 +26,14 @@ const Image = ({ alt, src }) => {
   }
 
   return (
-    <div className="relative">
+    <div>
       <img
-        className="absolute top-0 left-0 z-10 w-full transition-opacity duration-500 ease-in opacity-100"
         src={require(`../../src/content/assets/${src}?lqip`)}
         alt={alt}
         style={styles.lqip}
       />
 
       <img
-        className="w-full"
         src={require(`../../src/content/assets/${src}`)}
         alt={alt}
         onLoad={() => setImageLoaded(true)}
@@ -49,8 +47,8 @@ export default function Post({ content, frontmatter }) {
     <Layout>
       <article>
         <header>
-          <h1 className="my-0">{frontmatter.title}</h1>
-          <p className="text-xs">{frontmatter.date}</p>
+          <h1>{frontmatter.title}</h1>
+          <p>{frontmatter.date}</p>
         </header>
         <ReactMarkdown
           escapeHtml={false}

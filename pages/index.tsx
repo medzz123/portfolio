@@ -9,17 +9,15 @@ export default function Home({ posts }) {
       {posts.map(({ frontmatter: { title, description, date }, slug }) => (
         <article key={slug}>
           <header>
-            <h3 className="mb-2">
+            <h3>
               <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-                <a className="text-3xl font-semibold text-orange-600 no-underline">
-                  {title}
-                </a>
+                <a>{title}</a>
               </Link>
             </h3>
-            <span className="mb-4 text-xs">{date}</span>
+            <span>{date}</span>
           </header>
           <section>
-            <p className="mb-8">{description}</p>
+            <p>{description}</p>
           </section>
         </article>
       ))}
