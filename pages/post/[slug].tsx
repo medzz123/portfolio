@@ -2,14 +2,23 @@ import React from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import Layout from "../../components/layout";
 import ReactMarkdown from "react-markdown/with-html";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Layout from "../../components/layout";
+
+const CodeBlock = ({ language, value }) => {
+  return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
+};
 
 export default function Post({ content, frontmatter }) {
   return (
     <Layout>
       <article>
-        <ReactMarkdown escapeHtml={false} source={content} />
+        <ReactMarkdown
+          escapeHtml={false}
+          source={content}
+          renderers={{ code: CodeBlock }}
+        />
       </article>
     </Layout>
   );
