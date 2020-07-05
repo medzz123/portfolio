@@ -1,12 +1,20 @@
 import Button from '@components/Button';
 import fs from 'fs';
 import matter from 'gray-matter';
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
 export default function Home({ posts }) {
   return (
     <>
+      <Head>
+        <meta
+          name="description"
+          content="Portfolio website and personal blog."
+        />
+        <title>Mahedi Hasan | Attack Helicopter</title>
+      </Head>
       <h1>Custom Fonts are really nice</h1>
       {posts.map(({ frontmatter: { title, description, date }, slug }) => (
         <article key={slug}>
