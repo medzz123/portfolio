@@ -14,12 +14,14 @@ const H3 = styled.h3`
 interface Temporary {
   title: string;
   description: string;
-  readMore: boolean;
   github?: string;
+  slug: string;
+  demo?: string;
+  type: 'project' | 'post';
 }
 
 const Featured: React.FunctionComponent<Temporary> = (props) => {
-  const { title, description, readMore, github } = props;
+  const { title, description, github, demo, slug, type } = props;
 
   return (
     <Wrapper>
@@ -27,10 +29,14 @@ const Featured: React.FunctionComponent<Temporary> = (props) => {
       <Box mb={12} />
       <p>{description}</p>
       <Box mb={12} />
-      <p>
-        Demo <a>Somewhere</a>
-      </p>
-      <Box mb={12} />
+      {demo && (
+        <>
+          <p>
+            Demo <a>Somewhere</a>
+          </p>
+          <Box mb={12} />
+        </>
+      )}
       {github && (
         <>
           {github === 'private' ? (
@@ -62,14 +68,13 @@ const Featured: React.FunctionComponent<Temporary> = (props) => {
         </>
       )}
       <Box mb={12} />
-      {readMore && (
-        <Link href={`/${readMore}`}>
-          <a style={{ color: '#5393fe', fontWeight: 'bold' }}>
-            Read more!
-            <Arrow />
-          </a>
-        </Link>
-      )}
+
+      <Link href={`/${type}/[slug]`} as={`/${type}/${slug}`}>
+        <a style={{ color: '#5393fe', fontWeight: 'bold' }}>
+          Read more!
+          <Arrow />
+        </a>
+      </Link>
     </Wrapper>
   );
 };

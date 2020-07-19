@@ -23,6 +23,7 @@
       "@components/*": ["./src/components/*"],
       "@theme/*": ["./src/theme/*"],
       "@pages/*": ["src/pages/*"],
+      "@typings/*": ["src/typings/*"],
     }
   },
   "exclude": [

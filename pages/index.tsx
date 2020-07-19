@@ -1,93 +1,52 @@
-import Box from '@components/Box';
-import CTA from '@components/CTA';
-import Featured from '@components/Featured';
-import Head from '@components/Head';
-import Hero from '@components/Hero';
-import Link from 'next/link';
-import React from 'react';
-import styled from 'styled-components';
+import fs from 'fs';
+import matter from 'gray-matter';
 
-const FeatureTitle = styled.h1`
-  font-size: 50px;
-  text-align: center;
-  font-style: italic;
-  font-family: 'Space Mono';
-`;
+export { default } from '@pages/Home';
 
-const features = [
-  {
-    title: 'Spend Web',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
-    readMore: true,
-    github: 'https://google.com',
-  },
-  {
-    title: 'Spend Web',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
-    readMore: true,
-    github: 'private',
-  },
-  {
-    title: 'Spend Web',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
-    readMore: true,
-  },
-];
+const getData = (files: string[], dir: string) => {
+  return files.map((filename) => {
+    const markdownWithMetadata = fs
+      .readFileSync(`${dir}/${filename}`)
+      .toString();
 
-const Home = () => {
-  return (
-    <div>
-      <Head />
-      <Hero />
-      <Box mb={20} id="selected" />
-      <FeatureTitle>Recent Projects</FeatureTitle>
-      <Box mb={80} />
-      {features.map((feature, index) => (
-        <Featured key={`${feature.title}-${index}`} {...feature} />
-      ))}
-      <Box mb={80} />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Link href="/projects">
-          <CTA ctaType="anchor" variant="secondary">
-            Check out more
-          </CTA>
-        </Link>
-      </div>
-      <Box mb={80} />
-      <FeatureTitle>Recent Posts</FeatureTitle>
-      <Box mb={80} />
-      {features.map((feature, index) => (
-        <Featured
-          key={`${feature.title}-${index}`}
-          title={feature.title}
-          description={feature.description}
-          readMore={feature.readMore}
-        />
-      ))}
-      <Box mb={80} />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Link href="/blog">
-          <CTA ctaType="anchor" variant="secondary">
-            More posts
-          </CTA>
-        </Link>
-      </div>
-      <Box mb={80} />
-    </div>
-  );
+    const { data } = matter(markdownWithMetadata);
+
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = data.date.toLocaleDateString('en-US', options);
+
+    const frontmatter = {
+      ...data,
+      date: formattedDate,
+    };
+
+    return {
+      slug: filename.replace('.md', ''),
+      ...frontmatter,
+    };
+  });
 };
 
-export default Home;
+export async function getStaticProps() {
+  const posts = getData(
+    fs.readdirSync(`${process.cwd()}/src/content/posts`),
+    'src/content/posts'
+  )
+    // @ts-ignore
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
+
+  const projects = getData(
+    fs.readdirSync(`${process.cwd()}/src/content/projects`),
+    'src/content/projects'
+  )
+    // @ts-ignore
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 3);
+
+  return {
+    props: {
+      posts,
+      projects,
+    },
+  };
+}

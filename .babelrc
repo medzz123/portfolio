@@ -16,7 +16,8 @@
         "alias": {
           "@components": "./src/components",
           "@theme": "./src/theme",
-          "@pages": "./src/pages"
+          "@pages": "./src/pages",
+          "@typings": "./src/typings"
         }
       }
     ]
