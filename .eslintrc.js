@@ -5,6 +5,9 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { jsx: true },
   },
+  env: {
+    node: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
