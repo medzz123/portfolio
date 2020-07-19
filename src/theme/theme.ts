@@ -4,7 +4,7 @@ export const defaultTheme = {
     white: '#fff',
   },
   primary: {
-    main: '#446DF6',
+    main: '#73ABFF',
     light: 'rgb(105, 138, 247)',
     dark: 'rgb(47, 76, 172)',
     contrastText: '#fff',
@@ -53,7 +53,7 @@ export const defaultTheme = {
   },
   action: {
     active: 'rgba(0, 0, 0, 0.54)',
-    hover: 'rgba(0, 0, 0, 0.04)',
+    hover: '#FF715B',
     hoverOpacity: 0.04,
     selected: 'rgba(0, 0, 0, 0.08)',
     selectedOpacity: 0.08,
@@ -65,6 +65,8 @@ export const defaultTheme = {
     activatedOpacity: 0.12,
   },
 };
+
+// #2EE59D
 
 const dark: typeof defaultTheme = {
   ...defaultTheme,

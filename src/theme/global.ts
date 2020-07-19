@@ -6,11 +6,12 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   };
 
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    ::selection { background: #ff8075; }
+    ::selection { background: ${(p) => p.theme.secondary.main}; }
   }
 
   ul {

@@ -1,69 +1,93 @@
-import Button from '@components/Button';
-import fs from 'fs';
-import matter from 'gray-matter';
-import Head from 'next/head';
+import Box from '@components/Box';
+import CTA from '@components/CTA';
+import Featured from '@components/Featured';
+import Head from '@components/Head';
+import Hero from '@components/Hero';
 import Link from 'next/link';
 import React from 'react';
+import styled from 'styled-components';
 
-export default function Home({ posts }) {
+const FeatureTitle = styled.h1`
+  font-size: 50px;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Space Mono';
+`;
+
+const features = [
+  {
+    title: 'Spend Web',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
+    readMore: true,
+    github: 'https://google.com',
+  },
+  {
+    title: 'Spend Web',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
+    readMore: true,
+    github: 'private',
+  },
+  {
+    title: 'Spend Web',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta quo saepe aliquid culpa ratione voluptatem suscipit consequatur aperiam fuga sed! Quos beatae amet saepe aperiam tempore dolore neque nam tempora.',
+    readMore: true,
+  },
+];
+
+const Home = () => {
   return (
-    <>
-      <Head>
-        <meta
-          name="description"
-          content="Portfolio website and personal blog."
-        />
-        <title>Mahedi Hasan | Attack Helicopter</title>
-      </Head>
-      <h1>Custom Fonts are really nice</h1>
-      {posts.map(({ frontmatter: { title, description, date }, slug }) => (
-        <article key={slug}>
-          <Button>Hello</Button>
-          <header>
-            <h3>
-              <Link href={'/post/[slug]'} as={`/post/${slug}`}>
-                <a>{title}</a>
-              </Link>
-            </h3>
-            <span>{date}</span>
-          </header>
-          <section>
-            <p>{description}</p>
-          </section>
-        </article>
+    <div>
+      <Head />
+      <Hero />
+      <Box mb={20} id="selected" />
+      <FeatureTitle>Recent Projects</FeatureTitle>
+      <Box mb={80} />
+      {features.map((feature, index) => (
+        <Featured key={`${feature.title}-${index}`} {...feature} />
       ))}
-    </>
+      <Box mb={80} />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Link href="/projects">
+          <CTA ctaType="anchor" variant="secondary">
+            Check out more
+          </CTA>
+        </Link>
+      </div>
+      <Box mb={80} />
+      <FeatureTitle>Recent Posts</FeatureTitle>
+      <Box mb={80} />
+      {features.map((feature, index) => (
+        <Featured
+          key={`${feature.title}-${index}`}
+          title={feature.title}
+          description={feature.description}
+          readMore={feature.readMore}
+        />
+      ))}
+      <Box mb={80} />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Link href="/blog">
+          <CTA ctaType="anchor" variant="secondary">
+            More posts
+          </CTA>
+        </Link>
+      </div>
+      <Box mb={80} />
+    </div>
   );
-}
+};
 
-export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/src/content/posts`);
-
-  const posts = files.map((filename) => {
-    const markdownWithMetadata = fs
-      .readFileSync(`src/content/posts/${filename}`)
-      .toString();
-
-    const { data } = matter(markdownWithMetadata);
-
-    // Convert post date to format: Month day, Year
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = data.date.toLocaleDateString('en-US', options);
-
-    const frontmatter = {
-      ...data,
-      date: formattedDate,
-    };
-
-    return {
-      slug: filename.replace('.md', ''),
-      frontmatter,
-    };
-  });
-
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+export default Home;

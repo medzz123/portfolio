@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero renders correctly 1`] = `
+<div
+  className="sc-fznKkj iJnJBH"
+>
+  <div
+    className="sc-fzokOt dfKUJT"
+  >
+    <h1
+      className="sc-fzqBZW eSAyxL"
+    >
+      Hello! I am Mahedi 👋
+      <br />
+    </h1>
+    <span
+      className="sc-fzqNJr fhCGPW"
+    >
+      I'm a software developer, having an awesome time using React, React-Native and Node Js. Messing with game development and machine learning.
+    </span>
+    <br />
+    <div
+      style={
+        Object {
+          "display": "flex",
+        }
+      }
+    >
+      <a
+        href="/#projects"
+      >
+        <div
+          className="sc-fzoyAV cMMtTX"
+        >
+          Check out my work
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

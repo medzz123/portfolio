@@ -9,15 +9,12 @@ interface LayoutProps {
   dark: boolean;
 }
 
-const ContentWrapper = styled.div`
+export const MaxWrapper = styled.main`
+  max-width: 1110px;
   padding: 64px 64px 64px 128px;
   @media (max-width: 768px) {
     padding: 16px;
   }
-`;
-
-export const MaxWrapper = styled.main`
-  max-width: 1110px;
   margin: 0 auto;
 `;
 
@@ -25,14 +22,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <React.Fragment>
       <Header />
-      <MaxWrapper>
-        <ContentWrapper>{children}</ContentWrapper>
-      </MaxWrapper>
+      <MaxWrapper>{children}</MaxWrapper>
       <SideBar />
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 

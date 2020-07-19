@@ -1,3 +1,4 @@
+import Image from '@components/LazyMdxImage';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -7,38 +8,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
-};
-
-const Image = ({ alt, src }) => {
-  const [imageLoaded, setImageLoaded] = React.useState(false);
-
-  const styles = {
-    lqip: {
-      filter: 'blur(10px)',
-      opacity: 1,
-    },
-  };
-
-  // Hide preview when image has loaded.
-  if (imageLoaded) {
-    styles.lqip.opacity = 0;
-  }
-
-  return (
-    <div>
-      <img
-        src={require(`../../src/content/assets/${src}?lqip`)}
-        alt={alt}
-        style={styles.lqip}
-      />
-
-      <img
-        src={require(`../../src/content/assets/${src}`)}
-        alt={alt}
-        onLoad={() => setImageLoaded(true)}
-      />
-    </div>
-  );
 };
 
 export default function Post({ content, frontmatter }) {
