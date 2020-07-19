@@ -1,21 +1,19 @@
+import Featured from '@components/Featured';
 import Head from '@components/Head';
+import { NextPage } from 'next';
 import React from 'react';
 
-const Posts = (props) => {
+import { PostProps } from './Posts.models';
+
+const Posts: NextPage<PostProps> = (props) => {
   const { posts } = props;
 
   return (
     <div>
       <Head title="Posts" />
-      {posts.map((project, index: number) => (
-        <div key={`project-${index}`}>
-          <h2>{project.frontmatter.title}</h2>
-          <p>{project.frontmatter.description}</p>
-          <p>{project.frontmatter.date}</p>
-          <p>{project.frontmatter.github}</p>
-        </div>
+      {posts.map((feature, index) => (
+        <Featured key={`${feature.title}-${index}`} {...feature} type="post" />
       ))}
-      <div>Hi</div>
     </div>
   );
 };

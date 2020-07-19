@@ -11,7 +11,7 @@ export async function getStaticProps() {
       .readFileSync(`src/content/posts/${filename}`)
       .toString();
 
-    const { data, content } = matter(markdownWithMetadata);
+    const { data } = matter(markdownWithMetadata);
 
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = data.date.toLocaleDateString('en-US', options);
@@ -23,8 +23,7 @@ export async function getStaticProps() {
 
     return {
       slug: filename.replace('.md', ''),
-      frontmatter,
-      content,
+      ...frontmatter,
     };
   });
 

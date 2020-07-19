@@ -1,22 +1,24 @@
+import Featured from '@components/Featured';
 import Head from '@components/Head';
+import { NextPage } from 'next';
 import React from 'react';
 
-const Projects = (props) => {
+import { ProjectProps } from './Project.models';
+
+const Projects: NextPage<ProjectProps> = (props) => {
   const { projects } = props;
 
-  console.log('projects', projects);
   return (
     <div>
       <Head title="Projects" />
-      {projects.map((project, index: number) => (
-        <div key={`project-${index}`}>
-          <h2>{project.frontmatter.title}</h2>
-          <p>{project.frontmatter.description}</p>
-          <p>{project.frontmatter.date}</p>
-          <p>{project.frontmatter.github}</p>
-        </div>
+      <h1>Projects</h1>
+      {projects.map((feature, index) => (
+        <Featured
+          key={`${feature.title}-${index}`}
+          {...feature}
+          type="project"
+        />
       ))}
-      <div>Hi</div>
     </div>
   );
 };

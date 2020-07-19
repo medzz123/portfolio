@@ -7,6 +7,7 @@ const Image = ({ alt, src }) => {
     lqip: {
       filter: 'blur(10px)',
       opacity: 1,
+      width: '100%',
     },
   };
 
@@ -15,20 +16,16 @@ const Image = ({ alt, src }) => {
   }
 
   return (
-    <>
-      <img
-        src={require(`../../content/assets/${src}?lqip`)}
-        alt={alt}
-        style={styles.lqip}
-      />
+    <div style={{ position: 'relative' }}>
+      <img src={`/${src}?lqip`} alt={alt} style={styles.lqip} />
 
       <img
-        src={require(`../../content/assets/${src}`)}
+        src={`/${src}`}
         alt={alt}
         onLoad={() => setImageLoaded(true)}
-        style={{ width: '100%' }}
+        style={{ width: '100%', position: 'absolute', top: 0, left: 0 }}
       />
-    </>
+    </div>
   );
 };
 

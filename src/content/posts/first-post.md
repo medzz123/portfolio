@@ -12,4 +12,4 @@ date: 2020-04-16
 
 Normal text
 
-![Cat](cat.png)
+![Cat](nature/1.jpg)
