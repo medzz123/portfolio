@@ -40,8 +40,7 @@ export async function getStaticProps() {
     'src/content/projects'
   )
     // @ts-ignore
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3);
+    .filter((project) => project.featured);
 
   return {
     props: {

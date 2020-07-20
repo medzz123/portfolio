@@ -1,6 +1,6 @@
 import Box from '@components/Box';
+import Card from '@components/Card';
 import CTA from '@components/CTA';
-import Featured from '@components/Featured';
 import Head from '@components/Head';
 import Hero from '@components/Hero';
 import { NextPage } from 'next';
@@ -12,20 +12,16 @@ import { FeatureTitle } from './Home.styles';
 
 const Home: NextPage<HomeProps> = (props) => {
   const { posts, projects } = props;
-  console.log('Props', props);
+
   return (
     <div>
       <Head />
       <Hero />
       <Box mb={20} id="selected" />
-      <FeatureTitle>Recent Projects</FeatureTitle>
+      <FeatureTitle>Featured Projects</FeatureTitle>
       <Box mb={80} />
       {projects.map((feature, index) => (
-        <Featured
-          key={`${feature.title}-${index}`}
-          {...feature}
-          type="project"
-        />
+        <Card key={`${feature.title}-${index}`} {...feature} type="project" />
       ))}
       <Box mb={80} />
       <div
@@ -44,7 +40,7 @@ const Home: NextPage<HomeProps> = (props) => {
       <FeatureTitle>Recent Posts</FeatureTitle>
       <Box mb={80} />
       {posts.map((feature, index) => (
-        <Featured key={`${feature.title}-${index}`} {...feature} type="post" />
+        <Card key={`${feature.title}-${index}`} {...feature} type="post" />
       ))}
       <Box mb={80} />
       <div
@@ -53,7 +49,7 @@ const Home: NextPage<HomeProps> = (props) => {
           justifyContent: 'center',
         }}
       >
-        <Link href="/blog">
+        <Link href="/posts">
           <CTA ctaType="anchor" variant="secondary">
             More posts
           </CTA>

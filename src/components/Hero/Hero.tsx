@@ -13,7 +13,6 @@ const Hero: React.FunctionComponent = () => {
           👋
         </span>
       </Title>
-      <Box mb={40} />
       <SubText>
         I&apos;m a software developer, having an awesome time using React,
         React-Native and Node Js. Messing with game development and machine

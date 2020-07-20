@@ -17,7 +17,7 @@ import {
 const nav = [
   { title: 'Home', path: '/' },
   { title: 'Projects', path: '/projects' },
-  { title: 'Blog', path: '/posts' },
+  { title: 'Posts', path: '/posts' },
 ];
 
 const Header: React.FunctionComponent = () => {
