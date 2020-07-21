@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-export { default } from '@pages/Post';
+export { default } from '@pages/Project';
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('src/content/projects');
