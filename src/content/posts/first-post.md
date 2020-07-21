@@ -1,15 +1,17 @@
 ---
-title: First post
-description: The first post is the most memorable one.
+title: Sample post
+description: This is a sample post to test that it works
 date: 2020-04-16
 ---
 
-# h1
+## Hello
 
-## h2
+```jsx
+import React from "react";
 
-### h3
+const CoolComponent = () => <div>I'm a cool component!!</div>;
 
-Normal text
+export default CoolComponent;
+```
 
-![Cat](nature/1.jpg)
+![Uga Buga](nature/1.jpg)

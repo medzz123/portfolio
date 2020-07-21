@@ -1,0 +1,11 @@
+---
+title: Indi Spice
+description: VB.NET project for my college course. An EPOS system for a specific restaurant.
+date: 2017-02-01
+github: https://github.com/mahedihs1997/indispice
+---
+**Tech Stack** : VB.NET
+
+![Home](indi/home.png)
+
+This was the first graphical application. The project was built using VB.NET. At the time, I did not know a lot of coding, but this project inspired me to continue coding and learn more.

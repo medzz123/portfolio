@@ -9,6 +9,10 @@ const Wrapper = styled.article`
   min-height: 62vh;
 `;
 
+const A = styled.a`
+  text-decoration: underline;
+`;
+
 const Project = ({ content, frontmatter }) => {
   return (
     <Wrapper>
@@ -21,6 +25,16 @@ const Project = ({ content, frontmatter }) => {
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.date}</p>
       </header>
+      {frontmatter.demo && (
+        <p>
+          <A href={frontmatter.demo}>{frontmatter.demo}</A>
+        </p>
+      )}
+      {frontmatter.github && frontmatter.github !== 'private' && (
+        <p>
+          <A href={frontmatter.github}>{frontmatter.github}</A>
+        </p>
+      )}
       <ReactMarkdown
         escapeHtml={false}
         source={content}
