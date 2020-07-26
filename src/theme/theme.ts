@@ -1,4 +1,9 @@
 export const defaultTheme = {
+  beige: '#f9efe7',
+  black: '#000',
+  white: '#fff',
+  highlighter: '#ffe872',
+  gray: '#b7b4b9',
   common: {
     black: '#000',
     white: '#fff',
@@ -65,8 +70,6 @@ export const defaultTheme = {
     activatedOpacity: 0.12,
   },
 };
-
-// #2EE59D
 
 const dark: typeof defaultTheme = {
   ...defaultTheme,

@@ -1,16 +1,32 @@
+import { HighlightBox } from '@components/Highlight';
 import React from 'react';
 
-import { Container, Copy, FooterWrapper, Rotator } from './Footer.styles';
+import {
+  Container,
+  SideCopy,
+  TopCopyContainer,
+  Wrapper,
+} from './Footer.styles';
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <FooterWrapper>
+    <Wrapper>
       <Container>
-        <Rotator />
-        <Copy>Mahedi Hasan</Copy>
+        <TopCopyContainer>
+          <h1>
+            Get in <HighlightBox>touch!</HighlightBox>
+          </h1>
+          <SideCopy>
+            <p>
+              If you need a modern and powerful website for your business,
+              startup or yourself, I am available for work. You can email me
+              directly at ugabuga@email.com
+            </p>
+          </SideCopy>
+        </TopCopyContainer>
+        <p>All rights reserved. Whatever copyright.</p>
       </Container>
-      <Copy>&copy; 2020 Mahedi. Built with Next js.</Copy>
-    </FooterWrapper>
+    </Wrapper>
   );
 };
 

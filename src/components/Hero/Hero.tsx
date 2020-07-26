@@ -1,29 +1,34 @@
 import Box from '@components/Box';
-import CTA from '@components/CTA';
+import Button from '@components/Button';
+import { HighlightBox } from '@components/Highlight';
+import MaxContainer from '@components/MaxContainer';
+import Link from 'next/link';
 import React from 'react';
 
-import { SubText, Title, Wrapper } from './Hero.styles';
+import { HeadlineWrapper, HeroParagraph, Main, Title } from './Hero.styles';
 
 const Hero: React.FunctionComponent = () => {
   return (
-    <Wrapper>
-      <Title>
-        Hello! I am Mahedi{' '}
-        <span role="img" aria-label="wave">
-          👋
-        </span>
-      </Title>
-      <SubText>
-        I&apos;m a software developer, having an awesome time using React,
-        React-Native and Node Js. Messing with game development and machine
-        learning.
-      </SubText>
-      <Box mb={40} />
-
-      <CTA ctaType="anchor" variant="primary" href="/#selected">
-        Scroll down
-      </CTA>
-    </Wrapper>
+    <Main>
+      <MaxContainer>
+        <HeadlineWrapper>
+          <Title>
+            Hi, I’m Mahedi, <HighlightBox>Software Developer</HighlightBox>
+            and Professional <HighlightBox>Goofball</HighlightBox>
+          </Title>
+        </HeadlineWrapper>
+        <HeroParagraph>
+          <p>
+            I&apos;m a software developer, having an awesome time using React,
+            React-Native and Node Js. Learning Flutter & Go.
+          </p>
+        </HeroParagraph>
+        <Box mb={40} />
+        <Link href="/projects" passHref>
+          <Button>see my work</Button>
+        </Link>
+      </MaxContainer>
+    </Main>
   );
 };
 

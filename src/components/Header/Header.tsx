@@ -1,67 +1,36 @@
+import { LinkHighlight } from '@components/Highlight';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { ThemeContext } from 'styled-components';
 
-import {
-  Hamburger,
-  HeaderWrapper,
-  Item,
-  Logo,
-  Menu,
-  MenuLink,
-  Navigation,
-} from './Header.styles';
+import { Container, HeaderWrapper, List, Logo } from './Header.styles';
 
 const nav = [
-  { title: 'Home', path: '/' },
-  { title: 'Projects', path: '/projects' },
-  { title: 'Posts', path: '/posts' },
+  { title: 'my work', path: '/projects' },
+  { title: 'my posts', path: '/posts' },
 ];
 
 const Header: React.FunctionComponent = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const theme = React.useContext(ThemeContext);
-
-  const { pathname } = useRouter();
-
-  React.useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
-    <header>
-      <Menu open={open}>
-        {nav.map((n) => (
-          <Link href={n.path} key={`${n.path}-mobile`}>
-            <MenuLink active={pathname === n.path}>{n.title}</MenuLink>
-          </Link>
-        ))}
-      </Menu>
-      <HeaderWrapper>
+    <HeaderWrapper>
+      <Container>
         <Link href="/">
-          <Logo />
+          <a>
+            <Logo>Medz.</Logo>
+          </a>
         </Link>
-        {open ? (
-          <Hamburger onClick={() => setOpen(false)}>
-            <FaTimes size="35" color={theme.secondary.contrastText} />
-          </Hamburger>
-        ) : (
-          <Hamburger onClick={() => setOpen(true)}>
-            <FaBars size="25" color={theme.secondary.contrastText} />
-          </Hamburger>
-        )}
-        <Navigation>
-          {nav.map((d) => (
-            <Item key={`${d.path}-desktop`} active={pathname === d.path}>
-              <Link href={d.path}>{d.title}</Link>
-            </Item>
+        <List>
+          {nav.map((e, i) => (
+            <Link key={`navItem-${i}`} href={e.path}>
+              <a>
+                <LinkHighlight>
+                  <li>{e.title}</li>
+                </LinkHighlight>
+              </a>
+            </Link>
           ))}
-        </Navigation>
-      </HeaderWrapper>
-    </header>
+        </List>
+      </Container>
+    </HeaderWrapper>
   );
 };
 

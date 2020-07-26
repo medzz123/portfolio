@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   html {
-    font-family: 'Space Mono', sans-serif;
+    font-family: 'Mulish', sans-serif;
     scroll-behavior: smooth;
   };
 
@@ -14,7 +14,6 @@ const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    ::selection { background: ${(p) => p.theme.secondary.main}; }
   }
 
   ul {
@@ -22,14 +21,31 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Space Mono', sans-serif;
+    font-family: 'Mulish', sans-serif;
     color: ${(p) => p.theme.text.primary};
   }
 
   h1,h2,h3,h4,h5,h6{
-    font-family: 'Abril Fatface', sans-serif;
+    font-family: 'Abril Fatface', cursive;
     color: ${(p) => p.theme.text.primary};
     margin: 16px 0;
+  }
+
+  h1 {
+    font-size: 7vh;
+    font-weight: 400;
+  }
+
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    h1 {
+      font-size: 37px;
+    }
   }
   
   a {
