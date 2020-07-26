@@ -1,5 +1,7 @@
 import Box from '@components/Box';
 import Button from '@components/Button';
+import ExternalLink from '@components/ExternalLink';
+import List from '@components/List';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,21 +11,9 @@ interface ProjectCardProps {
   keywords: string[];
   slug: string;
   image: string;
+  github?: string;
+  demo?: string;
 }
-
-const List = styled.ul`
-  padding: 0;
-  margin: 0;
-  display: flex;
-
-  li {
-    padding: 5px 15px;
-    margin-right: 15px;
-    background-color: ${(p) => p.theme.beige};
-    font-weight: bold;
-    font-size: 13px;
-  }
-`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -53,7 +43,7 @@ const RightColumn = styled.div`
 `;
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { title, description, keywords, slug, image } = props;
+  const { title, description, keywords, slug, image, github, demo } = props;
 
   return (
     <Wrapper>
@@ -66,6 +56,9 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         </List>
         <Box mb={40} />
         <p>{description}</p>
+        {github && <ExternalLink href={github}>{github}</ExternalLink>}
+        <Box mb={10} />
+        {demo && <ExternalLink href={demo}>{demo}</ExternalLink>}
         <Box mb={40} />
         <Button href={`/project/[slug]`} as={`/project/${slug}`}>
           see this project

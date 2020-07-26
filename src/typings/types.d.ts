@@ -2,9 +2,10 @@ export interface Frontmatter {
     title: string;
     description: string;
     date: string;
-    github: string;
+    github?: string;
     keywords: string;
     image: string;
+    demo?: string;
 }
 
 export interface FrontMatterWithSlug extends Frontmatter {

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 
-export { default } from '@pages/Posts';
+export { default } from '@pages/Template';
 
 export async function getStaticProps() {
   const files = fs.readdirSync(`${process.cwd()}/src/content/posts`);
@@ -29,7 +29,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      content: posts,
+      type: 'post',
     },
   };
 }

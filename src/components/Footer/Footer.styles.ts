@@ -15,7 +15,7 @@ export const TopCopyContainer = styled.div`
   align-items: top;
   flex-wrap: wrap;
 
-  margin-bottom: 260px;
+  margin-bottom: 130px;
 `;
 
 export const TitleWrapper = styled.div`
@@ -26,4 +26,16 @@ export const SideCopy = styled.div`
   min-width: 50%;
   max-width: 544px;
   padding-top: 20px;
+`;
+
+export const SocialList = styled.ul`
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  li {
+    padding: 0;
+    margin-right: 15px;
+    font-weight: bold;
+  }
 `;

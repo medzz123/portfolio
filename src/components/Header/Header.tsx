@@ -6,7 +6,7 @@ import React from 'react';
 import { Container, HeaderWrapper, List, Logo } from './Header.styles';
 
 const nav = [
-  { title: 'my work', path: '/projects' },
+  { title: 'my projects', path: '/projects' },
   { title: 'my posts', path: '/posts' },
 ];
 
