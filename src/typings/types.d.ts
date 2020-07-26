@@ -3,6 +3,8 @@ export interface Frontmatter {
     description: string;
     date: string;
     github: string;
+    keywords: string;
+    image: string;
 }
 
 export interface FrontMatterWithSlug extends Frontmatter {

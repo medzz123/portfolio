@@ -2,7 +2,6 @@ import Box from '@components/Box';
 import Button from '@components/Button';
 import { HighlightBox } from '@components/Highlight';
 import MaxContainer from '@components/MaxContainer';
-import Link from 'next/link';
 import React from 'react';
 
 import { HeadlineWrapper, HeroParagraph, Main, Title } from './Hero.styles';
@@ -24,9 +23,7 @@ const Hero: React.FunctionComponent = () => {
           </p>
         </HeroParagraph>
         <Box mb={40} />
-        <Link href="/projects" passHref>
-          <Button>see my work</Button>
-        </Link>
+        <Button href="/projects">see my work</Button>
       </MaxContainer>
     </Main>
   );

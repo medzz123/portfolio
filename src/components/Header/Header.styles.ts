@@ -16,21 +16,10 @@ export const HeaderWrapper = styled.nav`
   margin-right: 24px;
   margin-left: 24px;
   padding-top: 32px;
-  padding-right: 60px;
-  padding-left: 60px;
   background-color: transparent;
-
-  @media screen and (max-width: 479px) {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
 `;
 
 export const Container = styled.div`
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
-  flex: 1;
   display: flex;
   justify-content: space-between;
 `;

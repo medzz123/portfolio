@@ -6,7 +6,9 @@ export const Main = styled.main`
   position: relative;
 
   display: flex;
-  padding: 22vh 60px 70px;
+  padding-top: 22vh;
+
+  padding-bottom: 70px;
 
   align-items: flex-start;
 
@@ -15,8 +17,6 @@ export const Main = styled.main`
 
   @media screen and (max-width: 479px) {
     padding-top: 120px;
-    padding-right: 20px;
-    padding-left: 20px;
   }
 `;
 

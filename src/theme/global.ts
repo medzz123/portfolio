@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 996px) {
     h1 {
       font-size: 50px;
     }
@@ -51,6 +51,11 @@ const GlobalStyles = createGlobalStyle`
   a {
       text-decoration: none;
       color: inherit;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 32px;
   }
 `;
 

@@ -1,9 +1,10 @@
 import { HighlightBox } from '@components/Highlight';
+import MaxContainer from '@components/MaxContainer';
 import React from 'react';
 
 import {
-  Container,
   SideCopy,
+  TitleWrapper,
   TopCopyContainer,
   Wrapper,
 } from './Footer.styles';
@@ -11,11 +12,13 @@ import {
 const Footer: React.FunctionComponent = () => {
   return (
     <Wrapper>
-      <Container>
+      <MaxContainer>
         <TopCopyContainer>
-          <h1>
-            Get in <HighlightBox>touch!</HighlightBox>
-          </h1>
+          <TitleWrapper>
+            <h1>
+              Get in <HighlightBox>touch!</HighlightBox>
+            </h1>
+          </TitleWrapper>
           <SideCopy>
             <p>
               If you need a modern and powerful website for your business,
@@ -25,7 +28,7 @@ const Footer: React.FunctionComponent = () => {
           </SideCopy>
         </TopCopyContainer>
         <p>All rights reserved. Whatever copyright.</p>
-      </Container>
+      </MaxContainer>
     </Wrapper>
   );
 };
