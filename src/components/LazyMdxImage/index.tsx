@@ -7,7 +7,8 @@ const Image = ({ alt, src }) => {
     lqip: {
       filter: 'blur(10px)',
       opacity: 1,
-      width: '100%',
+
+      maxWidth: '100%',
     },
   };
 
@@ -23,7 +24,7 @@ const Image = ({ alt, src }) => {
         src={`/${src}`}
         alt={alt}
         onLoad={() => setImageLoaded(true)}
-        style={{ width: '100%', position: 'absolute', top: 0, left: 0 }}
+        style={{ maxWidth: '100%', position: 'absolute', top: 0, left: 0 }}
       />
     </div>
   );
