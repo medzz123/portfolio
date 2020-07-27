@@ -22,16 +22,6 @@ export const Main = styled.main`
 
 export const HeadlineWrapper = styled.div``;
 
-export const HeroParagraph = styled.div`
-  max-width: 496px;
-
-  p {
-    margin-bottom: 10px;
-    font-size: 18px;
-    line-height: 32px;
-  }
-`;
-
 export const Title = styled.h1`
   margin-top: 0px;
   margin-bottom: 20px;

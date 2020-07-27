@@ -1,6 +1,7 @@
 import { LinkHighlight } from '@components/Highlight';
 import MaxContainer from '@components/MaxContainer';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import {
@@ -22,6 +23,12 @@ const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({
   toggleDarkMode,
 }) => {
   const [open, setOpen] = React.useState(false);
+
+  const { pathname } = useRouter();
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <HeaderWrapper>

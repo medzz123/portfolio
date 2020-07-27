@@ -22,8 +22,11 @@ const skills = [
   'React Native',
   'Gatsby',
   'Redux',
-  'Continous Integration',
+  'CI / CD',
   'Next Js',
+  'AWS',
+  'Heroku',
+  'Git / Github',
 ];
 
 const experiences = ['Java', 'C++', 'C#', 'Flutter', 'Go'];
@@ -61,10 +64,9 @@ const Home: NextPage<HomeProps> = (props) => {
           </h1>
 
           <p>
-            I am software developer, studying computer science at City
-            University. As part of my job in Equals, I have been working with
-            React, React-Native and Node. I am also currently working on
-            personal projects using Flutter and Machine learning.
+            Software developer, studying computer science at City University. As
+            part of my job in Equals, I have been working with React,
+            React-Native and Node. Trying to learn Flutter and Go.
           </p>
 
           <p>

@@ -4,7 +4,7 @@ import { HighlightBox } from '@components/Highlight';
 import MaxContainer from '@components/MaxContainer';
 import React from 'react';
 
-import { HeadlineWrapper, HeroParagraph, Main, Title } from './Hero.styles';
+import { HeadlineWrapper, Main, Title } from './Hero.styles';
 
 const Hero: React.FunctionComponent = () => {
   return (
@@ -12,17 +12,14 @@ const Hero: React.FunctionComponent = () => {
       <MaxContainer>
         <HeadlineWrapper>
           <Title>
-            Hi, I’m Mahedi, <HighlightBox>Software Developer</HighlightBox>
-            and Professional <HighlightBox>Goofball</HighlightBox>
+            Hello! I am Mahedi. I&apos;m a{' '}
+            <HighlightBox>Developer,</HighlightBox> having an awesome time using{' '}
+            <HighlightBox>React,</HighlightBox>{' '}
+            <HighlightBox>React Native</HighlightBox> &{' '}
+            <HighlightBox>Node Js</HighlightBox>.
           </Title>
         </HeadlineWrapper>
-        <HeroParagraph>
-          <p>
-            I&apos;m a software developer, having an awesome time using React,
-            React-Native and Node Js. Learning Flutter & Go.
-          </p>
-        </HeroParagraph>
-        <Box mb={40} />
+        <Box mb={80} />
         <Button href="#projects">see my projects</Button>
       </MaxContainer>
     </Main>

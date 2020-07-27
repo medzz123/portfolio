@@ -9,6 +9,4 @@ image: /indi/home.png
 ---
 **Tech Stack** : VB.NET
 
-![Home](indi/home.png)
-
 This was the first graphical application. The project was built using VB.NET. At the time, I did not know a lot of coding, but this project inspired me to continue coding and learn more.
