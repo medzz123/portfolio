@@ -11,5 +11,3 @@ demo: ugabuga
 **Tech Stack** : Java, JavaFx, My SQL
 
 This project which was part of my university course required me to create a software application connected to a database that allowed a hypothetical garage company to manage their day to day necessities. I used Java to create the application, and MySQL to connect to a local database. To design the application I used JavaFx, and used ITextPDF to generate reports and exporting them PDF.
-
-![Garits Customer Info Page](garits/customer.png)

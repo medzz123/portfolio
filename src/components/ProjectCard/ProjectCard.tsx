@@ -3,7 +3,13 @@ import Button from '@components/Button';
 import ExternalLink from '@components/ExternalLink';
 import List from '@components/List';
 import React from 'react';
-import styled from 'styled-components';
+
+import {
+  ImageWrapper,
+  LeftColumn,
+  RightColumn,
+  Wrapper,
+} from './ProjectCard.styles';
 
 interface ProjectCardProps {
   title: string;
@@ -14,33 +20,6 @@ interface ProjectCardProps {
   github?: string;
   demo?: string;
 }
-
-export const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-bottom: 60px;
-
-  @media screen and (max-width: 850px) {
-    flex-direction: column;
-  }
-`;
-
-const LeftColumn = styled.div`
-  flex: 1;
-  margin-bottom: 60px;
-  padding-right: 40px;
-`;
-
-const ImageWrapper = styled.div``;
-
-const RightColumn = styled.div`
-  flex: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   const { title, description, keywords, slug, image, github, demo } = props;
