@@ -5,7 +5,7 @@ date: 2017-02-01
 github: https://github.com/mahedihs1997/indispice
 keywords: VB.NET
 featured: true
-image: /indi/home.png
+image: /1.jpg
 ---
 **Tech Stack** : VB.NET
 
