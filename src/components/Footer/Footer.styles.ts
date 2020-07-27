@@ -6,7 +6,7 @@ export const Wrapper = styled.footer`
   margin-bottom: 24px;
   padding-top: 50px;
   padding-bottom: 24px;
-  background-color: #f9efe7;
+  background-color: ${(p) => p.theme.beige};
 `;
 
 export const TopCopyContainer = styled.div`

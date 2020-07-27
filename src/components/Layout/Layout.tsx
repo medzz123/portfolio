@@ -13,11 +13,11 @@ const Wrapper = styled.div`
 `;
 
 const Layout: React.FC<LayoutProps> = (props) => {
-  const { children } = props;
+  const { children, toggleDarkMode, dark } = props;
 
   return (
     <React.Fragment>
-      <Header />
+      <Header toggleDarkMode={toggleDarkMode} dark={dark} />
       <Wrapper>{children}</Wrapper>
       <Footer />
     </React.Fragment>

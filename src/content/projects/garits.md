@@ -6,7 +6,6 @@ github: https://github.com/mahedihs1997/garits
 keywords: Java, JavaFx, MySQL
 featured: true
 image: /nature/3.jpg
-demo: ugabuga
 ---
 **Tech Stack** : Java, JavaFx, My SQL
 

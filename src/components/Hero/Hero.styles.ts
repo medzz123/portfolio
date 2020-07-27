@@ -13,7 +13,7 @@ export const Main = styled.main`
   align-items: flex-start;
 
   flex: 1;
-  background-color: #f9efe7;
+  background-color: ${(p) => p.theme.beige};
 
   @media screen and (max-width: 479px) {
     padding-top: 120px;

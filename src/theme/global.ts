@@ -23,12 +23,12 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Mulish', sans-serif;
-    color: ${(p) => p.theme.text.primary};
+    color: ${(p) => p.theme.black};
   }
 
   h1,h2,h3,h4,h5,h6{
     font-family: 'Abril Fatface', cursive;
-    color: ${(p) => p.theme.text.primary};
+    color: ${(p) => p.theme.black};
     margin: 16px 0;
   }
 

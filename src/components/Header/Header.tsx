@@ -3,14 +3,22 @@ import MaxContainer from '@components/MaxContainer';
 import Link from 'next/link';
 import React from 'react';
 
-import { Container, HeaderWrapper, List, Logo } from './Header.styles';
+import {
+  Container,
+  HeaderWrapper,
+  List,
+  Logo,
+  ThemeButton,
+} from './Header.styles';
 
 const nav = [
   { title: 'my projects', path: '/projects' },
   { title: 'my posts', path: '/posts' },
 ];
 
-const Header: React.FunctionComponent = () => {
+const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({
+  toggleDarkMode,
+}) => {
   return (
     <HeaderWrapper>
       <MaxContainer>
@@ -30,6 +38,9 @@ const Header: React.FunctionComponent = () => {
                 </a>
               </Link>
             ))}
+            <ThemeButton type="button" onClick={toggleDarkMode}>
+              <LinkHighlight>toggle theme</LinkHighlight>
+            </ThemeButton>
           </List>
         </Container>
       </MaxContainer>

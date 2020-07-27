@@ -35,3 +35,20 @@ export const List = styled.ul`
     margin-left: 32px;
   }
 `;
+
+export const ThemeButton = styled.button`
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 32px;
+
+  cursor: pointer;
+
+  background-color: transparent;
+
+  color: ${(p) => p.theme.black};
+`;
