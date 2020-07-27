@@ -8,6 +8,7 @@ import {
   HeaderWrapper,
   List,
   Logo,
+  Menu,
   ThemeButton,
 } from './Header.styles';
 
@@ -30,18 +31,23 @@ const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({
           </Link>
           <List>
             {nav.map((e, i) => (
-              <Link key={`navItem-${i}`} href={e.path}>
-                <a>
-                  <LinkHighlight>
-                    <li>{e.title}</li>
-                  </LinkHighlight>
-                </a>
-              </Link>
+              <li key={`navItem-${i}`}>
+                <Link href={e.path} passHref>
+                  <a>
+                    <LinkHighlight>{e.title}</LinkHighlight>
+                  </a>
+                </Link>
+              </li>
             ))}
             <ThemeButton type="button" onClick={toggleDarkMode}>
               <LinkHighlight>toggle theme</LinkHighlight>
             </ThemeButton>
           </List>
+          <Menu>
+            <div />
+            <div />
+            <div />
+          </Menu>
         </Container>
       </MaxContainer>
     </HeaderWrapper>

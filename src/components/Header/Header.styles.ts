@@ -5,6 +5,40 @@ export const Logo = styled.span`
   font-size: 22px;
 `;
 
+export const Menu = styled.button`
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div {
+    transition: all 250ms ease;
+    height: 3px;
+    width: 100%;
+    background-color: ${(p) => p.theme.highlighter};
+  }
+
+  &:hover {
+    div {
+      &:nth-child(2) {
+        transform: translateX(8px);
+      }
+    }
+  }
+
+  @media screen and (min-width: 596px) {
+    display: none;
+  }
+`;
+
 export const HeaderWrapper = styled.nav`
   position: absolute;
   left: 0%;
@@ -36,6 +70,10 @@ export const List = styled.ul`
     font-size: 18px;
     font-weight: bold;
     margin-left: 32px;
+  }
+
+  @media screen and (max-width: 596px) {
+    display: none;
   }
 `;
 

@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
-const LinkHighlight = styled.div`
-  box-shadow: inset 0 -10px 0 0 ${(p) => p.theme.highlighter};
-
-  transition: all 250ms ease;
-
+const LinkHighlight = styled.span`
   &:hover {
-    box-shadow: inset 0 -22px 0 0 ${(p) => p.theme.highlighter};
+    background: linear-gradient(
+      0deg,
+      ${(p) => p.theme.highlighter} 70%,
+      transparent 10%,
+      transparent 20%
+    );
   }
+
+  background: linear-gradient(
+    transparent 60%,
+    ${(p) => p.theme.highlighter} 40%
+  );
 `;
 
 const HighlightBox = styled.span`
