@@ -58,6 +58,13 @@ const GlobalStyles = createGlobalStyle`
     font-size: 18px;
     line-height: 32px;
   }
+
+  code {
+    background-color: rgba(27,31,35,.05);
+    padding: .2em .4em;
+    font-size: 85%;
+    border-radius: 6px;
+  }
 `;
 
 export default GlobalStyles;
