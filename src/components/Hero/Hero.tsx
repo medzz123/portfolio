@@ -12,9 +12,8 @@ const Hero: React.FunctionComponent = () => {
       <MaxContainer>
         <HeadlineWrapper>
           <Title>
-            Hello! I am Mahedi. I&apos;m a{' '}
-            <HighlightBox>Developer,</HighlightBox> having an awesome time using{' '}
-            <HighlightBox>React,</HighlightBox>{' '}
+            Hey! I am Mahedi. I&apos;m a <HighlightBox>Developer,</HighlightBox>{' '}
+            having an awesome time using <HighlightBox>React,</HighlightBox>{' '}
             <HighlightBox>React Native</HighlightBox> &{' '}
             <HighlightBox>Node Js</HighlightBox>.
           </Title>

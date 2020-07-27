@@ -36,8 +36,9 @@ const Individual = ({ content, frontmatter, type }) => {
               </>
             )}
             {demo && <ExternalLink href={demo}>{demo}</ExternalLink>}
-            <Box mb={40} />
+            <Box mb={10} />
             {github && <ExternalLink href={github}>{github}</ExternalLink>}
+            <Box mb={40} />
 
             <p>{description}</p>
             <Box mb={40} />

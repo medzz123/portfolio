@@ -18,10 +18,10 @@ const Image = ({ alt, src }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <img src={`/${src}?lqip`} alt={alt} style={styles.lqip} />
+      <img src={`${src}?lqip`} alt={alt} style={styles.lqip} />
 
       <img
-        src={`/${src}`}
+        src={`${src}`}
         alt={alt}
         onLoad={() => setImageLoaded(true)}
         style={{ maxWidth: '100%', position: 'absolute', top: 0, left: 0 }}
