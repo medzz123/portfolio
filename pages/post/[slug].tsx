@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-export { default } from '@pages/Post';
+export { default } from '@pages/Individual';
 
 export async function getStaticPaths() {
   const files = fs.readdirSync('src/content/posts');
@@ -37,8 +37,9 @@ export async function getStaticProps({ params: { slug } }) {
 
   return {
     props: {
-      content: `# ${data.title}\n${content}`,
+      content,
       frontmatter,
+      type: 'post',
     },
   };
 }

@@ -6,4 +6,5 @@ export interface CardProps {
   demo?: string;
   date: string;
   type: 'project' | 'post';
+  keywords: string[];
 }

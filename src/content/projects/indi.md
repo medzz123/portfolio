@@ -3,6 +3,9 @@ title: Indi Spice
 description: VB.NET project for my college course. An EPOS system for a specific restaurant.
 date: 2017-02-01
 github: https://github.com/mahedihs1997/indispice
+keywords: VB.NET
+featured: true
+image: /indi/home.png
 ---
 **Tech Stack** : VB.NET
 

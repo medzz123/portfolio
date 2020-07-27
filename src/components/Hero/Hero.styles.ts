@@ -1,23 +1,38 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Main = styled.main`
+  min-height: calc(100vh - 48px);
+  background-color: ${(p) => p.theme.beige};
   position: relative;
-  min-height: 85vh;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 22vh;
+
+  padding-bottom: 70px;
+
   align-items: flex-start;
-`;
 
-export const Title = styled.h1`
-  font-size: 64px;
+  flex: 1;
+  background-color: ${(p) => p.theme.beige};
 
-  @media (max-width: 520px) {
-    font-size: 34px;
+  @media screen and (max-width: 479px) {
+    padding-top: 120px;
   }
 `;
 
-export const SubText = styled.span`
-  font-size: 22px;
-  line-height: 2;
+export const HeadlineWrapper = styled.div``;
+
+export const HeroParagraph = styled.div`
+  max-width: 496px;
+
+  p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+`;
+
+export const Title = styled.h1`
+  margin-top: 0px;
+  margin-bottom: 20px;
 `;
