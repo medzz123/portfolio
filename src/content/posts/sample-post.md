@@ -3,6 +3,7 @@ title: Sample post
 description: This is a sample post to test that it works
 date: 2020-04-16
 keywords: Sample, Dummy, Lies
+image: /nature/4.jpg
 ---
 
 ## Hello

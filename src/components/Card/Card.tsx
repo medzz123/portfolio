@@ -46,7 +46,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
 
       <Box mb={30} />
 
-      <Button href={`/project/[slug]`} as={`/project/${slug}`}>
+      <Button href={`/${type}/[slug]`} as={`/${type}/${slug}`}>
         {type === 'project' ? 'see this project' : 'read more'}
       </Button>
     </Wrapper>
