@@ -22,12 +22,15 @@ export const HeaderWrapper = styled.nav`
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const List = styled.ul`
   display: flex;
   margin: 0;
   padding: 0;
+
+  align-items: center;
 
   a {
     font-size: 18px;
@@ -47,6 +50,8 @@ export const ThemeButton = styled.button`
   margin-left: 32px;
 
   cursor: pointer;
+
+  font-family: 'Mulish', sans-serif;
 
   background-color: transparent;
 

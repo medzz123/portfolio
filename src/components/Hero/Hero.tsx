@@ -23,7 +23,7 @@ const Hero: React.FunctionComponent = () => {
           </p>
         </HeroParagraph>
         <Box mb={40} />
-        <Button href="/projects">see my work</Button>
+        <Button href="#projects">see my projects</Button>
       </MaxContainer>
     </Main>
   );

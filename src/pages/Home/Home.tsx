@@ -1,4 +1,5 @@
 import Box from '@components/Box';
+import Button from '@components/Button';
 import Head from '@components/Head';
 import Hero from '@components/Hero';
 import { HighlightBox, LinkHighlight } from '@components/Highlight';
@@ -35,7 +36,7 @@ const Home: NextPage<HomeProps> = (props) => {
       <Head />
       <Hero />
       <MaxContainer>
-        <Container>
+        <Container id="projects">
           {projects.map((project, index) => (
             <ProjectCard
               key={`project-${index}`}
@@ -49,6 +50,11 @@ const Home: NextPage<HomeProps> = (props) => {
             />
           ))}
         </Container>
+
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button href="/projects">check more projects</Button>
+        </div>
+
         <Container>
           <h1>
             About <HighlightBox>me</HighlightBox>
