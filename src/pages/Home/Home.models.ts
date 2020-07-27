@@ -1,6 +1,6 @@
 import { FrontMatterWithSlug } from '@typings/types';
 
 export interface HomeProps {
-  posts: FrontMatterWithSlug[];
+  blog: FrontMatterWithSlug[];
   projects: FrontMatterWithSlug[];
 }

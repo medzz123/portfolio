@@ -16,7 +16,7 @@ import {
 
 const nav = [
   { title: 'my projects', path: '/projects' },
-  { title: 'my posts', path: '/posts' },
+  { title: 'my blog', path: '/blog' },
 ];
 
 const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({

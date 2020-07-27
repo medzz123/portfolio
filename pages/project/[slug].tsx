@@ -26,7 +26,6 @@ export async function getStaticProps({ params: { slug } }) {
 
   const { data, content } = matter(markdownWithMetadata);
 
-  // Convert post date to format: Month day, Year
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = data.date.toLocaleDateString('en-US', options);
 

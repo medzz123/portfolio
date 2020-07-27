@@ -21,7 +21,7 @@ const Individual = ({ content, frontmatter, type }) => {
           <header style={{ textAlign: 'center' }}>
             <h1>{title}</h1>
             <Box mb={40} />
-            {type === 'post' && (
+            {type === 'blog' && (
               <>
                 <p>{date}</p>
                 <Box mb={40} />
@@ -52,8 +52,8 @@ const Individual = ({ content, frontmatter, type }) => {
         />
         <Box mb={80} />
         <Align>
-          <Button href={type === 'project' ? '/projects' : '/posts'}>
-            check more {type === 'project' ? 'projects' : 'posts'}
+          <Button href={type === 'project' ? '/projects' : '/blog'}>
+            check more {type === 'project' ? 'projects' : 'articles'}
           </Button>
         </Align>
         <Box mb={80} />

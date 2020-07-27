@@ -5,7 +5,7 @@ import path from 'path';
 export { default } from '@pages/Individual';
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync('src/content/posts');
+  const files = fs.readdirSync('src/content/blog');
 
   const paths = files.map((filename) => ({
     params: {
@@ -21,12 +21,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMetadata = fs
-    .readFileSync(path.join('src/content/posts', slug + '.md'))
+    .readFileSync(path.join('src/content/blog', slug + '.md'))
     .toString();
 
   const { data, content } = matter(markdownWithMetadata);
 
-  // Convert post date to format: Month day, Year
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = data.date.toLocaleDateString('en-US', options);
 
@@ -39,7 +38,7 @@ export async function getStaticProps({ params: { slug } }) {
     props: {
       content,
       frontmatter,
-      type: 'post',
+      type: 'blog',
     },
   };
 }

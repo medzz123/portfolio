@@ -14,7 +14,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
     <Wrapper>
       <TopContainer>
         <h2>{title}</h2>
-        {type === 'post' && <span>{date}</span>}
+        {type === 'blog' && <span>{date}</span>}
       </TopContainer>
 
       <Box mb={10} />

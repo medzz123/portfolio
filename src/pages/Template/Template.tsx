@@ -18,7 +18,7 @@ const Projects: NextPage<TemplateProps> = (props) => {
         <MaxContainer>
           <h1>
             <HighlightBox>
-              {type === 'project' ? 'Projects' : 'Posts'}
+              {type === 'project' ? 'Projects' : 'Blog'}
             </HighlightBox>
           </h1>
         </MaxContainer>

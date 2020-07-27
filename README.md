@@ -1,6 +1,6 @@
 # Portfolio 
 
-Portfolio website so showcase my work and some posts. 
+Portfolio website so showcase my projects and to write articles. 
 
 # Tech Stack
 - Next js

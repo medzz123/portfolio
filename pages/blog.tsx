@@ -4,11 +4,11 @@ import matter from 'gray-matter';
 export { default } from '@pages/Template';
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/src/content/posts`);
+  const files = fs.readdirSync(`${process.cwd()}/src/content/blog`);
 
-  const posts = files.map((filename) => {
+  const blog = files.map((filename) => {
     const markdownWithMetadata = fs
-      .readFileSync(`src/content/posts/${filename}`)
+      .readFileSync(`src/content/blog/${filename}`)
       .toString();
 
     const { data } = matter(markdownWithMetadata);
@@ -29,8 +29,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      content: posts,
-      type: 'post',
+      content: blog,
+      type: 'blog',
     },
   };
 }

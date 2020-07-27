@@ -4,6 +4,6 @@ export interface CardProps {
   links?: string;
   slug: string;
   date: string;
-  type: 'project' | 'post';
+  type: 'project' | 'blog';
   keywords: string[];
 }

@@ -27,9 +27,9 @@ const getData = (files: string[], dir: string) => {
 };
 
 export async function getStaticProps() {
-  const posts = getData(
-    fs.readdirSync(`${process.cwd()}/src/content/posts`),
-    'src/content/posts'
+  const blog = getData(
+    fs.readdirSync(`${process.cwd()}/src/content/blog`),
+    'src/content/blog'
   )
     // @ts-ignore
     .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -44,7 +44,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      blog,
       projects,
     },
   };
