@@ -2,7 +2,7 @@
 title: Equals Mobile
 description: Equals Mobile, are the collection of mobile apps that I have worked at Equals.
 date: 2019-09-01
-demo: https://play.google.com/store/apps/details?id=com.equals.go&hl=en
+links: https://play.google.com/store/apps/details?id=com.equals.go&hl=en
 keywords: React Native, Typescript, Detox
 image: /road.jpg
 ---

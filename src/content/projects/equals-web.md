@@ -2,7 +2,7 @@
 title: Equals Web
 description: Equals Web, are the collection of web apps that I have worked at Equals.
 date: 2019-04-01
-demo: https://personal.equals.co/
+links: https://equalsmoney.com/, https://personal.equals.co/, https://spend.equalsmoney.com/
 keywords: React, Next Js, Apollo, Redux, Typescript
 image: /road.jpg
 ---

@@ -1,6 +1,6 @@
 import Box from '@components/Box';
 import Button from '@components/Button';
-import ExternalLink from '@components/ExternalLink';
+import ExternalLink, { LinkSpacer } from '@components/ExternalLink';
 import List from '@components/List';
 import React from 'react';
 
@@ -8,16 +8,7 @@ import { CardProps } from './Card.models';
 import { TopContainer, Wrapper } from './Card.styles';
 
 const Card: React.FunctionComponent<CardProps> = (props) => {
-  const {
-    title,
-    description,
-    github,
-    demo,
-    slug,
-    type,
-    date,
-    keywords,
-  } = props;
+  const { title, description, links, slug, type, date, keywords } = props;
 
   return (
     <Wrapper>
@@ -40,9 +31,14 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
 
       <Box mb={20} />
 
-      {demo && <ExternalLink href={demo}>{demo}</ExternalLink>}
-      <Box mb={10} />
-      {github && <ExternalLink href={github}>{github}</ExternalLink>}
+      <LinkSpacer>
+        {links &&
+          links.split(',').map((link, index) => (
+            <ExternalLink href={link} key={`link-${index}`}>
+              {link}
+            </ExternalLink>
+          ))}
+      </LinkSpacer>
 
       <Box mb={30} />
 

@@ -2,7 +2,7 @@
 import Box from '@components/Box';
 import Button from '@components/Button';
 import Code from '@components/Code';
-import ExternalLink from '@components/ExternalLink';
+import ExternalLink, { LinkSpacer } from '@components/ExternalLink';
 import Head from '@components/Head';
 import Image from '@components/LazyMdxImage';
 import MaxContainer from '@components/MaxContainer';
@@ -12,15 +12,7 @@ import ReactMarkdown from 'react-markdown';
 import { Align, Main } from './Individual.styles';
 
 const Individual = ({ content, frontmatter, type }) => {
-  const {
-    demo,
-    github,
-    title,
-    description,
-    keywords,
-    image,
-    date,
-  } = frontmatter;
+  const { links, title, description, keywords, image, date } = frontmatter;
   return (
     <>
       <Head title={title} description={description} keywords={keywords} />
@@ -35,9 +27,14 @@ const Individual = ({ content, frontmatter, type }) => {
                 <Box mb={40} />
               </>
             )}
-            {demo && <ExternalLink href={demo}>{demo}</ExternalLink>}
-            <Box mb={10} />
-            {github && <ExternalLink href={github}>{github}</ExternalLink>}
+            <LinkSpacer>
+              {links &&
+                links.split(',').map((link, index) => (
+                  <ExternalLink href={link} key={`link-${index}`}>
+                    {link}
+                  </ExternalLink>
+                ))}
+            </LinkSpacer>
             <Box mb={40} />
 
             <p>{description}</p>

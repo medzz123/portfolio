@@ -48,8 +48,7 @@ const Home: NextPage<HomeProps> = (props) => {
               keywords={project.keywords.split(',')}
               slug={project.slug}
               image={project.image}
-              github={project.github}
-              demo={project.demo}
+              links={project.links}
             />
           ))}
         </Container>

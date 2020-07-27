@@ -16,4 +16,11 @@ const ExternalLink: React.FC<{ href: string }> = ({ children, href }) => {
   );
 };
 
+export const LinkSpacer = styled.div`
+  a {
+    margin-bottom: 10px;
+    display: block;
+  }
+`;
+
 export default ExternalLink;

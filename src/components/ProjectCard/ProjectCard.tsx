@@ -1,6 +1,6 @@
 import Box from '@components/Box';
 import Button from '@components/Button';
-import ExternalLink from '@components/ExternalLink';
+import ExternalLink, { LinkSpacer } from '@components/ExternalLink';
 import List from '@components/List';
 import React from 'react';
 
@@ -17,12 +17,11 @@ interface ProjectCardProps {
   keywords: string[];
   slug: string;
   image: string;
-  github?: string;
-  demo?: string;
+  links?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = (props) => {
-  const { title, description, keywords, slug, image, github, demo } = props;
+  const { title, description, keywords, slug, image, links } = props;
 
   return (
     <Wrapper>
@@ -35,9 +34,14 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         </List>
         <Box mb={40} />
         <p>{description}</p>
-        {github && <ExternalLink href={github}>{github}</ExternalLink>}
-        <Box mb={10} />
-        {demo && <ExternalLink href={demo}>{demo}</ExternalLink>}
+        <LinkSpacer>
+          {links &&
+            links.split(',').map((link, index) => (
+              <ExternalLink href={link} key={`link-${index}`}>
+                {link}
+              </ExternalLink>
+            ))}
+        </LinkSpacer>
         <Box mb={40} />
         <Button href={`/project/[slug]`} as={`/project/${slug}`}>
           see this project

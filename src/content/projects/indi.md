@@ -2,7 +2,7 @@
 title: Indi Spice
 description: VB.NET project for my college course. An electronic point of sale system for a restaurant.
 date: 2017-02-01
-github: https://github.com/mahedihs1997/indispice
+links: https://github.com/mahedihs1997/indispice
 keywords: VB.NET
 featured: true
 image: /flower.jpg
