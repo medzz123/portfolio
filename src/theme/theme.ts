@@ -9,7 +9,7 @@ export const defaultTheme = {
 const dark: typeof defaultTheme = {
   beige: '#1B1F3B',
   black: '#F6F7F8',
-  white: '#000',
+  white: '#141414',
   highlighter: '#FF3366',
   gray: '#b7b4b9',
 };

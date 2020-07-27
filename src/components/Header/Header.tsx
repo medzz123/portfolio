@@ -9,6 +9,7 @@ import {
   List,
   Logo,
   Menu,
+  MenuButton,
   ThemeButton,
 } from './Header.styles';
 
@@ -20,6 +21,8 @@ const nav = [
 const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({
   toggleDarkMode,
 }) => {
+  const [open, setOpen] = React.useState(false);
+
   return (
     <HeaderWrapper>
       <MaxContainer>
@@ -43,10 +46,27 @@ const Header: React.FC<{ toggleDarkMode: () => void; dark: boolean }> = ({
               <LinkHighlight>toggle theme</LinkHighlight>
             </ThemeButton>
           </List>
-          <Menu>
-            <div />
-            <div />
-            <div />
+
+          <MenuButton open={open} onClick={() => setOpen(!open)}>
+            <span />
+            <span />
+            <span />
+          </MenuButton>
+          <Menu open={open}>
+            <List vertical>
+              {nav.map((e, i) => (
+                <li key={`vertical-navItem-${i}`}>
+                  <Link href={e.path} passHref>
+                    <a>
+                      <LinkHighlight>{e.title}</LinkHighlight>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+              <ThemeButton type="button" onClick={toggleDarkMode} vertical>
+                <LinkHighlight>toggle theme</LinkHighlight>
+              </ThemeButton>
+            </List>
           </Menu>
         </Container>
       </MaxContainer>
