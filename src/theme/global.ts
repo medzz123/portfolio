@@ -60,7 +60,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   code {
-    background-color: rgba(27,31,35,.05);
+    background-color: ${(p) => p.theme.beige};
     padding: .2em .4em;
     font-size: 85%;
     border-radius: 6px;
