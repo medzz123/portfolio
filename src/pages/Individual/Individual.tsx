@@ -6,6 +6,7 @@ import ExternalLink, { LinkSpacer } from '@components/ExternalLink';
 import Head from '@components/Head';
 import Image from '@components/LazyMdxImage';
 import MaxContainer from '@components/MaxContainer';
+import ProgressBar from '@components/ProgressBar';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -16,6 +17,7 @@ const Individual = ({ content, frontmatter, type }) => {
   return (
     <>
       <Head title={title} description={description} keywords={keywords} />
+      <ProgressBar />
       <Main>
         <MaxContainer>
           <header style={{ textAlign: 'center' }}>
