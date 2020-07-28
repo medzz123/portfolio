@@ -94,6 +94,7 @@ const Home: NextPage<HomeProps> = (props) => {
             <a
               style={{ display: 'inline-block' }}
               href="https://drive.google.com/open?id=13I3typns39yBO674xUBoNiLoYU_6qFM1"
+              target="blank"
             >
               <LinkHighlight>
                 <b>resume.</b>

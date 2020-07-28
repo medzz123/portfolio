@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: 8px;
   width: 100vw;
   overflow: hidden;
+  z-index: 99;
 `;
 
 const Progress = styled.div<{ progress: number }>`
