@@ -3,5 +3,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "cSpell.words": ["toastify", "lqip"]
+  "cSpell.words": [
+    "Codegen",
+    "lqip",
+    "toastify"
+  ]
 }

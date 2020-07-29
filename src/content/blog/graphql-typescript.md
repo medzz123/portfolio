@@ -23,26 +23,24 @@ touch codegen.yml
 And populate it with
 
 ```yml
-// codegen.yml
+# codegen.yml
 schema:
-  - './src/schema.ts'
+  - './src/schema.ts' # Where your schema lives
 generates:
-  ./src/typings/generated.ts:
+  ./src/typings/generated.ts: # Where your types will be generated to
     config:
-      contextType: ./types#Context
-      mappers:
-        Customer: ./types#CustomerModel
+      contextType: ./types#Context # Your context type
+      mappers: # Your model mappings
+        Customer: ./types#CustomerModel 
         Vehicle: ./types#VehicleModel
-    plugins:
+    plugins: # Plugins necessary for this to work
       - typescript
       - typescript-resolvers
 ```
 <br/>
 <br/>
 
-## What do these options mean?
-
-**Schema:**
+## Schema
 
 Directory or file where your schema lives. You can use globe patterns as well or point to multiple files like this:
 
@@ -55,8 +53,7 @@ This will go through the files and pull all the schemas within the `gql` tags.
 
 If you have them all over the place, you can always point to the root directory, but it might take a while to go through all the files.
 
-
-**Generates:**
+## Generates
 
 The line below generates will decide where your generated file will be created. The path is relative from your yml file.
 
@@ -71,16 +68,14 @@ In my case I have a file called `types.ts` in the directory where my generated f
 
 ```ts
 // types.ts
-import { CustomerModelStatic, Customer } from '../models/customer';
-import { VehicleModelStatic, Vehicle } from '../models/vehicle';
-
-export type CustomerModel = Customer;
-export type VehicleModel = Vehicle;
+import { CustomerModelStatic } from '../models/customer';
+import { VehicleModelStatic } from '../models/vehicle';
 
 export type Context = {
   secret: string;
   models: {
-    Customer: CustomerModelStatic;
+    // These are my Sequelize models
+    Customer: CustomerModelStatic; 
     Vehicle: VehicleModelStatic;
   };
 };
@@ -147,3 +142,27 @@ config:
 ```
 
 now we will be able access all the other properties such as `customerId`, `createdAt` etc.
+
+Now lets add the script and connect it to our resolvers.
+
+```json
+// package.json
+"generate": "graphql-codegen"
+```
+
+```ts
+// resolver.ts
+import { Resolvers } from '../typings/generated'; // Path to your types
+
+const resolvers: Resolvers = {
+  Query: {
+    // ... your resolvers
+  },
+};
+
+export default resolvers;
+```
+
+![Model Types](/graphql-typescript/model.png);
+
+![Parent Types](/graphql-typescript/parent.png);
