@@ -59,12 +59,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 32px;
   }
 
-  code {
-    background-color: ${(p) => p.theme.beige};
-    padding: .2em .4em;
-    font-size: 85%;
-    border-radius: 6px;
-  }
+ 
 `;
 
 export default GlobalStyles;

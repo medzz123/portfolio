@@ -11,9 +11,9 @@ import {
 } from './Footer.styles';
 
 const socialLinks = [
-  { label: 'Github', link: 'https://github.com' },
-  { label: 'LinkedIn', link: 'https://linkedin.com' },
-  { label: 'Twitter', link: 'https://twitter.com' },
+  { label: 'Github', link: 'https://github.com/medzz123' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/medzz123/' },
+  { label: 'Twitter', link: 'https://twitter.com/medzz123' },
 ];
 
 const Footer: React.FunctionComponent = () => {
@@ -42,7 +42,7 @@ const Footer: React.FunctionComponent = () => {
             <SocialList>
               {socialLinks.map((social, index) => (
                 <li key={`social-${index}`}>
-                  <a href={social.link}>
+                  <a href={social.link} target="blank">
                     <LinkHighlight>{social.label}</LinkHighlight>
                   </a>
                 </li>

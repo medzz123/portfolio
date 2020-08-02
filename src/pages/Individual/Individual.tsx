@@ -4,6 +4,7 @@ import Button from '@components/Button';
 import Code from '@components/Code';
 import ExternalLink, { LinkSpacer } from '@components/ExternalLink';
 import Head from '@components/Head';
+import { LinkHighlight } from '@components/Highlight';
 import Image from '@components/LazyMdxImage';
 import MaxContainer from '@components/MaxContainer';
 import ProgressBar from '@components/ProgressBar';
@@ -11,6 +12,14 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { Align, Main } from './Individual.styles';
+
+const Anchor = (props) => {
+  return (
+    <a {...props}>
+      <LinkHighlight>{props.children}</LinkHighlight>
+    </a>
+  );
+};
 
 const Individual = ({ content, frontmatter, type }) => {
   const { links, title, description, keywords, image, date } = frontmatter;
@@ -50,7 +59,7 @@ const Individual = ({ content, frontmatter, type }) => {
         <ReactMarkdown
           escapeHtml={false}
           source={content}
-          renderers={{ code: Code, image: Image }}
+          renderers={{ code: Code, image: Image, link: Anchor }}
         />
         <Box mb={80} />
         <Align>

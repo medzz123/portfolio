@@ -10,10 +10,10 @@ interface HeadProps {
 
 const Head: React.FC<HeadProps> = (props) => {
   const {
-    title = 'Mahedi Hasan | Attack Helicopter',
+    title = 'Mahedi Hasan | Software Developer',
     description = 'Portfolio website and personal blog.',
     author = 'Mahedi Hasan',
-    keywords = 'Mahedi Hasan, Personal Website, Portfolio',
+    keywords = 'Mahedi Hasan, Personal Website, Portfolio, Blog',
   } = props;
   return (
     <NextHead>
