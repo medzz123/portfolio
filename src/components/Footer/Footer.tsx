@@ -11,8 +11,8 @@ import {
 } from './Footer.styles';
 
 const socialLinks = [
-  { label: 'Github', link: 'https://github.com/mahedihs1997' },
-  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/mahedihs1997/' },
+  { label: 'Github', link: 'https://github.com/medzz123' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/medzz123/' },
   { label: 'Twitter', link: 'https://twitter.com/medzz123' },
 ];
 
