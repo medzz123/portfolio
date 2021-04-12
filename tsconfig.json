@@ -24,6 +24,7 @@
       "@theme/*": ["./src/theme/*"],
       "@pages/*": ["src/pages/*"],
       "@typings/*": ["src/typings/*"],
+      "@lib/*": ["src/lib/*"],
     }
   },
   "exclude": [

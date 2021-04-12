@@ -17,7 +17,8 @@
           "@components": "./src/components",
           "@theme": "./src/theme",
           "@pages": "./src/pages",
-          "@typings": "./src/typings"
+          "@typings": "./src/typings",
+          "@lib": "./src/lib"
         }
       }
     ]
