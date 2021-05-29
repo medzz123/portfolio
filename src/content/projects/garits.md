@@ -2,7 +2,7 @@
 title: Garits Garage System
 description: Java project for my university course. A garage admin application that enables the management of the daily necessities of a garage.
 date: 2019-02-01
-links: https://github.com/mahedihs1997/garits
+links: https://github.com/medzz123/garits
 keywords: Java, JavaFx, MySQL
 featured: true
 image: /garits/customer-list.png

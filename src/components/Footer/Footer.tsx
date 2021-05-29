@@ -31,10 +31,10 @@ const Footer: React.FunctionComponent = () => {
               Drop me an email at{' '}
               <a
                 style={{ display: 'inline-block' }}
-                href="mailto:mahedi.hs1997@gmail.com"
+                href="mailto:hello@medzz.dev"
               >
                 <LinkHighlight>
-                  <b>mahedi.hs1997@gmail.com</b>
+                  <b>hello@medzz.dev</b>
                 </LinkHighlight>
               </a>
             </p>

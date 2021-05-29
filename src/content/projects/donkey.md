@@ -2,7 +2,7 @@
 title: Donkey
 description: Donkey is a personal project that I have been working on to expand my knowledge of SSR, Graphql and deploying projects live. At completion Donkey will be an admin app that will allow management of the daily necessities of a garage.
 date: 2019-02-01
-links: https://github.com/mahedihs1997/donkey, https://github.com/mahedihs1997/keynod
+links: https://github.com/medzz123/donkey, https://github.com/medzz123/keynod
 keywords: Typescript, Next Js, Apollo, Heroku, Postgre
 featured: true
 image: /sea.jpg

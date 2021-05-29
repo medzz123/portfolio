@@ -6,7 +6,7 @@ keywords: Graphql, Apollo, Sequelize, Node Js, Graphql Codegen, Graphql Tools
 image: /gt/graphql.png
 ---
 
-Example repo: [Apollo Generated Typescript Resolvers](https://github.com/mahedihs1997/article-graphql-generated-types)
+Example repo: [Apollo Generated Typescript Resolvers](https://github.com/medzz123/article-graphql-generated-types)
 
 Install these dependencies
 
@@ -95,4 +95,4 @@ And here you can see typescript in action
 
 ![Typescript in action](/gt/types.png)
 
-**Full example repo with Sequelize as ORM**: [Apollo Generated Typescript Resolvers](https://github.com/mahedihs1997/article-graphql-generated-types)
+**Full example repo with Sequelize as ORM**: [Apollo Generated Typescript Resolvers](https://github.com/medzz123/article-graphql-generated-types)
