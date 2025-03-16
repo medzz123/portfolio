@@ -1,1 +1,1 @@
-Used some template to create this portfolio, because I find this kinda boring.
+Used some template git clone https://github.com/dillionverma/portfolio to create this portfolio, because I find this kinda boring. Sick template though.
