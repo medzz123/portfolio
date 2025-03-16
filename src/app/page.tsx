@@ -109,6 +109,20 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="resume">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <h2 className="text-xl font-bold">Resume</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <embed 
+              src="/resume.pdf" 
+              type="application/pdf"
+              className="w-full h-[600px] rounded-lg"
+            />
+          </BlurFade>
+        </div>
+      </section>
      
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
