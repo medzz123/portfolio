@@ -10,11 +10,11 @@ export const DATA = {
   description:
     "Software Engineer passionate about building innovative solutions and tackling challenging problems.",
   summary: `
-I started developing in **2019** after completing my computer science degree and have since worked as a **software engineer**, building and scaling fintech applications.  
+I started developing in **2019** after completing my Computer Science degree and have since focused on building and scaling **fintech platforms**.
 
-I’ve been part of **early engineering teams**, designing **Nx monorepos**, optimizing **developer workflows**, and architecting solutions that balance **speed and maintainability**.  
+I’ve been part of **early engineering teams**, shaping core architecture, designing **Nx/Turbo monorepos**, and improving **developer workflows** to ship fast and reliably.
 
-My work spans **frontend and backend development, infrastructure, and automation**, always focusing on solving **complex problems efficiently**. I'm always looking for **new challenges** and opportunities to push the boundaries of what I can build.
+My work spans **frontend**, **backend**, and **infrastructure** on **GCP**, with experience in CI/CD, automation, and **LLM pipelines** for financial data. I focus on clean architecture, speed, and solving complex problems efficiently.
   `,
   avatarUrl: "/me.jpg",
   skills: [
@@ -27,6 +27,7 @@ My work spans **frontend and backend development, infrastructure, and automation
     "Postgres",
     "Docker",
     "GCP",
+    "Pulumi"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
